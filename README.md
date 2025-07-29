@@ -4,7 +4,7 @@ This project automates maintenance tasks on a Supabase database, including archi
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Prerequisites
 
