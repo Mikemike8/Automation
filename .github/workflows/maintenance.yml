@@ -1,0 +1,19 @@
+name: Scheduled Maintenance
+
+on:
+  schedule:
+    - cron: '* * * * *'  # Runs every minute (the fastest possible schedule)
+
+jobs:
+  run-maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: node maintenance.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
