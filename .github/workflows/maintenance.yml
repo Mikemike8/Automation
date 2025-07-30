@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
-      - run: node maintenance.js
+      - run: node cron.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
